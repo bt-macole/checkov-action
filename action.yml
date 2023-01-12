@@ -100,6 +100,10 @@ inputs:
   bitbucket_username:
     description: 'Environment variable name for a Bitbucket username to perform basic auth inorder to scan external modules sourced from a private Bitbucket repository. To be used with bitbucket_app_password'
     required: false
+  args:
+    description: 'Additional arguments to pass to the command (i.e. "--skip-path=skip/this/path")'
+    required: false
+    default: ""
 outputs:
   results:
     description: 'The results from the infrastructure scan'
@@ -132,6 +136,7 @@ runs:
     - ${{ inputs.docker_image }}
     - ${{ inputs.dockerfile_path }}
     - ${{ inputs.var_file }}
+    - ${{ inputs.args }}
     - "--user ${{ inputs.container_user }}"
   env:
     API_KEY_VARIABLE: ${{ inputs.api-key }}
