@@ -104,9 +104,9 @@ inputs:
     description: 'Additional arguments to pass to the command (i.e. "--skip-path=skip/this/path")'
     required: false
     default: ""
-outputs:
-  results:
-    description: 'The results from the infrastructure scan'
+# outputs:
+#   results:
+#     description: 'The results from the infrastructure scan'
 
 branding:
   icon: 'shield'
